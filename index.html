@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&text=1234567890:"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>いるいるタイマー</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="timer-container">
+        <span id="display-minutes">00</span>
+        <span>:</span>
+        <span id="display-seconds">00</span>
+      </div>
+
+      <div class="actions-container">
+        <button id="start">
+          <span class="material-icons material-icons-outlined">
+            play_arrow
+          </span>
+        </button>
+        <button id="stop" class="display-none">
+          <span class="material-icons material-icons-outlined"> pause </span>
+        </button>
+        <button id="reset" disabled>
+          <span class="material-icons material-icons-outlined"> stop </span>
+        </button>
+      </div>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

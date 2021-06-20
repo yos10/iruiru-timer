@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.container {
+  display: grid;
+  place-content: center;
+}
+
+.timer-container {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.timer-container > span {
+  font-size: 4rem;
+}
+
+.actions-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.display-none {
+  display: none;
+}
