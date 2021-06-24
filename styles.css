@@ -34,10 +34,10 @@ body {
 }
 
 .actions-container {
-  width: 100vw;
+  width: 240px;
   grid-area: b;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .action-button {
@@ -58,10 +58,4 @@ body {
 
 .display-none {
   display: none;
-}
-
-@media screen and (min-width: 576px) {
-  .actions-container {
-    width: 20vw;
-  }
 }
