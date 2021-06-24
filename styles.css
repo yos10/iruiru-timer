@@ -1,8 +1,6 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
+* {
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
@@ -11,31 +9,59 @@ html {
 }
 
 body {
-  height: 100vh;
   font-family: 'Roboto Mono', sans-serif;
 }
 
 .container {
+  height: 100vh;
   display: grid;
-  place-content: center;
+  grid-template-areas:
+    "a a a a"
+    "b b b b"
+    "b b b b";
+  justify-items: center;
+  align-items: center;
 }
 
 .timer-container {
-  width: 300px;
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  grid-area: a;
 }
 
 .timer-container > span {
-  font-size: 4rem;
+  font-size: 8rem;
 }
 
 .actions-container {
+  width: 100vw;
+  grid-area: b;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+}
+
+.action-button {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 4rem;
+  border: none;
+  cursor: pointer;
+}
+
+.action-button:disabled {
+  cursor: not-allowed;
+}
+
+.material-icons {
+  font-size: 4rem;
 }
 
 .display-none {
   display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .actions-container {
+    width: 20vw;
+  }
 }
