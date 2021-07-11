@@ -9,7 +9,7 @@ let startTime = 0;
 let displayTime = 0;
 let isRunning = false;
 let intervalID = null;
-let previousText = null;
+let previousMinutes = null;
 
 function hideButton(element) {
   element.classList.add('display-none');
@@ -48,7 +48,7 @@ function start() {
   intervalID = setInterval(() => {
     const time = calcDisplayTime();
     printDisplayTime(time);
-    speakDisplayMinutes(displayMinutes);
+    speakDisplayMinutes(time);
   }, 100);
 }
 
@@ -82,12 +82,12 @@ function printDisplayTime(time) {
   displaySeconds.textContent = formattedSeconds;
 }
 
-function speakDisplayMinutes(displayMinutes) {
-  const currentText = displayMinutes.textContent;
-  if (previousText !== currentText) {
-    previousText = currentText;
-    if (currentText !== '00' && previousText) {
-      const text = Number(currentText) + '分、経過';
+function speakDisplayMinutes(time) {
+  const currentMinutes = Math.floor(Math.floor(time / 1000) / 60);
+  if (previousMinutes !== currentMinutes) {
+    previousMinutes = currentMinutes;
+    if (currentMinutes !== 0 && previousMinutes) {
+      const text = currentMinutes + '分、経過';
       const utterThis = new SpeechSynthesisUtterance(text);
       speechSynthesis.speak(utterThis);
     }
